@@ -21,7 +21,7 @@ export const getJoke = asyncHandler(
   }
 );
 
-const sendEmail = async (email: string | undefined, joke: string) => {
+const sendEmail = async (email: string, joke: string) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

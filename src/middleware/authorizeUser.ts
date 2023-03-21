@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 import asyncHandler from "express-async-handler";
 import { SECRET } from "../params";
 
 export interface CustomRequest extends Request {
-  user?: UserPayload;
+  user?: UserPayload | JwtPayload;
 }
 
 interface UserPayload {
